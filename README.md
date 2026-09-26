@@ -172,6 +172,54 @@ Finalmente, imprime en la consola un resumen estadistico limpio (formateando los
 * System.out.printf():   Imprime texto formateado usando comodines como %.2f (para 2 decimales) o %d (para enteros).
 
 
+# Entrada Proceso y Salida
+
+1. Entrada
+* totalHoras: Constante entera con valor 10.
+
+* val (por cada hora): Cantidad de paquetes procesados por hora ingresada por teclado 10 veces.
+
+* Validaciones de Entrada:
+
+* Comprobacion de tipo de dato entero mediante el metodo hasNextInt().
+
+* Comprobacion de rango no negativo evaluando que val sea mayor o igual a 0.
+
+2. Proceso
+Captura y Almacenamiento: Guardar cada valor validado dentro de la posicion correspondiente de un arreglo unidimensional paquetes[10].
+
+* Calculo del Total y Minimo:
+
+* Recorrer el arreglo para acumular la suma de todos los elementos sumando paquetes[i].
+
+* Evaluar si paquetes[i] < menorCantidad para registrar el valor minimo junto a la hora exacta.
+
+* Calculo del Promedio: Convertir el total a tipo decimal para realizar la division flotante dividiendo total entre 10.
+
+* Analisis de Rendimiento y Rachas:
+
+* Comparar cada elemento paquetes[i] contra el promedio.
+
+* Si es menor al promedio incrementar el contador horasBajoPromedio++ e incrementar rachaActual++.
+
+* Si rachaActual > rachaMaxima actualizar la variable rachaMaxima con el valor de rachaActual.
+
+* Si es mayor o igual al promedio reiniciar la variable rachaActual a 0.
+
+3. Salida
+* Total acumulado de paquetes procesados.
+
+* Promedio de produccion por hora formateado a 2 decimales.
+
+* Hora especifica con la menor cantidad procesada junto a su respectivo valor.
+
+* Cantidad total de horas con produccion inferior a la media.
+
+* Racha maxima consecutiva de horas por debajo del promedio.
+
+* Listado tabular formateado de la produccion hora por hora.
+
+
 # #Ejercico 2
 
 # Explicacion del ejercio
@@ -217,3 +265,41 @@ Para organizar toda esa información en orden, el programa usa una matriz (tabla
 *	\t	    Tabulacion para alinear la matriz en formato de tabla.
 
 *	System.out.println();	  Salto de linea para separar las filas al imprimir la matriz.
+
+
+# Entrada Proceso y Salida
+
+1. Entrada
+* ventas[4][5]: Matriz de enteros de 4 filas por 5 columnas que representa 4 sucursales y 5 productos.
+
+* ventas[i][j]: Cantidad de unidades vendidas de un producto en una sucursal.
+
+* Validacion de Entrada: Bucle do-while que exige el reingreso de datos si se introduce un valor menor a 0.
+
+2. Proceso
+* Llenado y Filtro: Recorrer la matriz celda por celda y si ventas[i][j] > 30 incrementar el contador registrosMayores30++.
+
+* Totales por Sucursal (Suma de Filas):
+
+* Fijar la fila y recorrer las columnas acumulando totalSucursal += ventas[i][j].
+
+* Evaluar si totalSucursal < menorVentas para registrar la sucursal con menor desempeno total.
+
+* Totales por Producto (Suma de Columnas):
+
+* Fijar la columna y recorrer las filas acumulando totalProducto += ventas[i][j].
+
+* Evaluar si totalProducto > mayorVentas para registrar el producto estrella.
+
+3. Salida
+* Totales individuales de ventas por cada una de las 4 sucursales.
+
+* Totales individuales de unidades vendidas por cada uno de los 5 productos.
+
+* Nombre de la sucursal con menor volumen de ventas totales junto a su suma.
+
+* Nombre del producto con mayor volumen de unidades vendidas junto a su suma.
+
+* Total de celdas en las que se superaron las 30 unidades.
+
+* Representacion grafica de la matriz organizada en filas y columnas alineadas con tabulaciones.
